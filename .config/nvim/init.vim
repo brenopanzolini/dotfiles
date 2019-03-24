@@ -18,3 +18,6 @@ let mapleader="\<space>"
 nnoremap <leader>ev :vsplit ~/.config/nvim/init.vim<cr>
 nnoremap <leader>sv :source ~/.config/nvim/init.vim<cr>
 nnoremap <c-p> :Files<cr>
+
+" Unsets the "last search pattern" register by hitting return
+nnoremap <CR> :noh<CR><CR>
