@@ -1,6 +1,4 @@
-# Personal Setup
-
-My personal setups.
+# Dotfiles
 
 - .zshrc
 - neovim
