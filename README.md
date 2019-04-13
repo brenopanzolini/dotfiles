@@ -7,6 +7,7 @@
 
 - [httpie](https://httpie.org/)
 - [fzf](https://github.com/junegunn/fzf)
+- [Hack font](https://sourcefoundry.org/hack/)
 
 ## ZSH Plugins
 
