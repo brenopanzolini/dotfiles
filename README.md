@@ -1,6 +1,7 @@
 # Dotfiles
 
 - .zshrc
+- .spacemacs
 - neovim
 
 ## Tools
