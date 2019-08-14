@@ -9,6 +9,3 @@ alias edit="nvim ~/.zshrc"
 alias reload="source ~/.zshrc"
 alias vim="nvim"
 alias vi="nvim"
-
-export GOPATH=$(go env GOPATH)
-export PATH=$GOPATH/bin:$PATH
