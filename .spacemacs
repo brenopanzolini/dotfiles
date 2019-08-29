@@ -297,6 +297,9 @@ before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
   ;; Prevent exec-path-from-shell from invoking zsh as a login shell
   (setq exec-path-from-shell-arguments '("-l"))
+  
+  ;; Exec clojure-mode to .repl files
+  (add-to-list 'auto-mode-alist '("\\.repl\\'" . clojure-mode))
   )
 
 (defun dotspacemacs/user-config ()
