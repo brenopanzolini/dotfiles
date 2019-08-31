@@ -285,7 +285,7 @@ values."
    ;; `trailing' to delete only the whitespace at end of lines, `changed'to
    ;; delete only whitespace for changed lines or `nil' to disable cleanup.
    ;; (default nil)
-   dotspacemacs-whitespace-cleanup nil
+   dotspacemacs-whitespace-cleanup 'trailing
    ))
 
 (defun dotspacemacs/user-init ()
@@ -297,7 +297,7 @@ before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
   ;; Prevent exec-path-from-shell from invoking zsh as a login shell
   (setq exec-path-from-shell-arguments '("-l"))
-  
+
   ;; Exec clojure-mode to .repl files
   (add-to-list 'auto-mode-alist '("\\.repl\\'" . clojure-mode))
   )
