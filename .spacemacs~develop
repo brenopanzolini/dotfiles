@@ -34,7 +34,8 @@ This function should only modify configuration layer settings."
    dotspacemacs-configuration-layers
    '(
      auto-completion
-     clojure
+     (clojure :variables
+              clojure-enable-clj-refactor t)
      emacs-lisp
      git
      helm
