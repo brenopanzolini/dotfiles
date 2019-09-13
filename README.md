@@ -20,4 +20,8 @@ git clone https://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/z
 
 ## Spacemacs
 
+```sh
+brew install borkdude/brew/clj-kondo
+```
+
 `M-x all-the-icons-install-fonts`
