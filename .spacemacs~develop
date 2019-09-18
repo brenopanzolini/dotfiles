@@ -463,15 +463,44 @@ This function is called only while dumping Spacemacs configuration. You can
 dump."
   )
 
+(defun custom-clj-indent ()
+  (define-clojure-indent
+    (against-background 'defun)
+    (alet 'defun)
+    (as-customer 1)
+    (as-of 1)
+    (constraint-fn 'defun)
+    (data-fn 'defun)
+    (defflow 'defun)
+    (fact 'defun)
+    (facts 'defun)
+    (flow 'defun)
+    (for-all 'defun)
+    (future-fact 'defun)
+    (let-entities 'defun)
+    (log-messages 'defun)
+    (match? 'defun)
+    (mlet 'defun)
+    (provided 'defun)
+    (providing 'defun)
+    (request-context 'defun)
+    (tabular 'defun)
+    (tabular-flow 'defun)
+    (verify 'defun))
+  )
+
 (defun dotspacemacs/user-config ()
   "Configuration for user code:
 This function is called at the very end of Spacemacs startup, after layer
 configuration.
 Put your configuration code here, except for variables that should be set
 before packages are loaded."
+  ;; Indent and align for Clojure
   (add-hook 'clojure-mode-hook #'aggressive-indent-mode)
   (setq clojure-indent-style 'align-arguments)
   (setq clojure-align-forms-automatically t)
+  (with-eval-after-load 'clojure-mode (custom-clj-indent))
+  (with-eval-after-load 'midje-mode (custom-clj-indent))
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
