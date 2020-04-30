@@ -4,7 +4,7 @@
 - .spacemacs
 - neovim
 
-## Tools
+## Misc
 
 - [httpie](https://httpie.org/)
 - [fzf](https://github.com/junegunn/fzf)
