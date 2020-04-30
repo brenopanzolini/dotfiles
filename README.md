@@ -1,7 +1,6 @@
 # Dotfiles
 
-- .zshrc
-- .spacemacs
+My dotfiles.
 
 ## Misc
 
