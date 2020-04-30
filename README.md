@@ -2,7 +2,6 @@
 
 - .zshrc
 - .spacemacs
-- neovim
 
 ## Misc
 
