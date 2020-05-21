@@ -1,6 +1,6 @@
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
-export EDITOR=emacs
+export EDITOR=nvim
 export DOTFILES_DIR="$HOME/.dotfiles"
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
