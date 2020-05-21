@@ -51,3 +51,7 @@
   :after lsp-mode
   :config
   (lsp-treemacs-sync-mode 1))
+
+(use-package grip-mode
+  :config
+  (setq grip-update-after-change nil))
