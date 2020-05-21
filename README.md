@@ -7,6 +7,7 @@ My dotfiles.
 - [hack font](https://sourcefoundry.org/hack/)
 - [httpie](https://httpie.org/)
 - [fzf](https://github.com/junegunn/fzf)
+- [ripgrep](https://github.com/BurntSushi/ripgrep#installation)
 - [asdf](https://asdf-vm.com/#/core-manage-asdf-vm)
 - [neovim](https://github.com/neovim/neovim/wiki/Installing-Neovim#macos--os-x)
 - [emacs](https://www.gnu.org/software/emacs/)
