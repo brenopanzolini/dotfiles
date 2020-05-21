@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/breno/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 export EDITOR=emacs
 export DOTFILES_DIR="$HOME/.dotfiles"
 
