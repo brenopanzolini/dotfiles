@@ -1,0 +1,10 @@
+# Misc
+alias vim=nvim
+
+# FZF
+alias f="fzf --preview 'head -100 {}' --bind 'enter:execute(nvim {})+abort'"
+
+# Dotfiles
+alias dotfiles="$EDITOR $DOTFILES_DIR"
+alias edit="vim ~/.zshrc"
+alias reload="source ~/.zshrc"
