@@ -19,7 +19,7 @@ plugins=(
 # Sources
 source $ZSH/oh-my-zsh.sh
 [[ -s ~/.zsh_aliases ]] && source ~/.zsh_aliases
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+[[ -s ~/.p10k.zsh ]] && source ~/.p10k.zsh
 
 # ASDF
 . $(brew --prefix asdf)/asdf.sh
