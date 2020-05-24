@@ -1,44 +1,107 @@
 ;;; $DOOMDIR/config.el -*- lexical-binding: t; -*-
 
+;; to open emacs maximized
 (add-to-list 'initial-frame-alist '(fullscreen . maximized))
 
-(setq
- history-length 300
- left-fringe-width 16
- indent-tabs-mode nil
- confirm-kill-emacs nil
- mode-line-default-help-echo nil
- compilation-scroll-output 'first-error
+;; disable confirmation message on exit
+(setq confirm-kill-emacs nil)
 
- projectile-project-search-path '("~/projects/")
+;; evil
+(setq evil-split-window-below t
+      evil-vsplit-window-right t)
 
- evil-split-window-below t
- evil-vsplit-window-right t
- evil-collection-setup-minibuffer t
+;; doom fonts
+(setq  doom-font (font-spec :family "Hack" :size 18)
+       doom-big-font-increment 2)
 
- user-full-name "Breno Panzolini"
- user-mail-address "bpanzolini@gmail.com"
+;; doom themes
+(setq  doom-theme 'doom-dracula
+       doom-themes-treemacs-theme "Default")
 
- doom-font (font-spec :family "Hack" :size 16)
- doom-big-font-increment 2
+;; display-line-numbers
+(setq display-line-numbers-type t)
 
- doom-theme 'doom-molokai
- doom-themes-treemacs-theme "Default"
+;; set localleader the same as Spacemacs
+(setq doom-localleader-key ",")
 
- display-line-numbers-type t)
+;; format on-save
+(setq +format-on-save-enabled-modes t)
 
+;; projectile
+(setq projectile-project-search-path '("~/Projects/"))
+
+;; dired
+(add-hook! dired-mode
+           ;; Auto refresh buffers
+           (global-auto-revert-mode t)
+
+           ;; Also auto refresh dired, but be quiet about it
+           (setq global-auto-revert-non-file-buffers t)
+           (setq auto-revert-verbose nil))
+
+;; aggressive indent
+(use-package! aggressive-indent
+  :hook
+  (clojure-mode . aggressive-indent-mode)
+  (emacs-lisp-mode . aggressive-indent-mode)
+  (lisp-mode . aggressive-indent-mode))
+
+;; paredit
+(use-package! paredit
+  :hook
+  (clojure-mode . paredit-mode)
+  (emacs-lisp-mode . paredit-mode)
+  (lisp-mode . paredit-mode))
+
+;; clojure
+(add-to-list 'auto-mode-alist '("\\.repl\\'" . clojure-mode))
+
+(set-popup-rule! "^\\*cider-repl" :side 'right :width 0.5)
+
+(use-package! clojure-mode
+  :config
+  (setq cider-show-error-buffer 'only-in-repl
+        clojure-indent-style 'always-align
+        clojure-align-forms-automatically t
+        clj-refactor-mode 1
+        yas-minor-mode 1)) ; for adding require/use/import statements
+
+(use-package! clj-refactor
+  :after clojure-mode
+  :config
+  (setq cljr-warn-on-eval nil
+        cljr-clojure-test-declaration "[clojure.test :refer :all]"
+        cljr-magic-require-namespaces
+        '(("gen" . "common-test.generators")
+          ("io" . "clojure.java.io")
+          ("pp" . "clojure.pprint")
+          ("s" . "schema.core")
+          ("set" . "clojure.set")
+          ("str" . "clojure.string"))))
+
+;; company
 (use-package! company
   :config
   (setq company-minimum-prefix-length 3
+        company-idle-delay 0.15
         company-tooltip-align-annotations t
         company-show-numbers t))
 
+;; lsp
 (use-package! lsp-mode
   :commands lsp
-  :hook ((go-mode . lsp))
+  :hook ((clojure-mode . lsp)
+         (go-mode . lsp))
   :init
   (setq lsp-log-io nil
-        lsp-semantic-highlighting :immediate))
+        lsp-semantic-highlighting :immediate)
+  :config
+  (dolist (m '(clojure-mode
+               clojurec-mode
+               clojurescript-mode
+               clojurex-mode))
+    (add-to-list 'lsp-language-id-configuration `(,m . "clojure")))
+  (advice-add #'lsp-rename :after (lambda (&rest _) (projectile-save-project-buffers))))
 
 (use-package! lsp-ui
   :after lsp-mode
@@ -47,11 +110,15 @@
   (setq lsp-ui-peek-list-width 60
         lsp-ui-peek-fontify 'always))
 
-(use-package lsp-treemacs
+(use-package! lsp-treemacs
   :after lsp-mode
   :config
   (lsp-treemacs-sync-mode 1))
 
-(use-package grip-mode
+;; grip
+(use-package! grip-mode
   :config
   (setq grip-update-after-change nil))
+
+;; load custom bindings
+(load! "+bindings")

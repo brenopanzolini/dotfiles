@@ -2,6 +2,12 @@
 	name = Breno Panzolini
 	email = bpanzolini@gmail.com
 
+[core]
+    excludesfile = ~/.gitignore_global
+
+[commit]
+  gpgsign = true
+
 [alias]
 	st = status
 	ci = commit
