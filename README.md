@@ -9,6 +9,7 @@ My dotfiles.
 - [fzf](https://github.com/junegunn/fzf)
 - [ripgrep](https://github.com/BurntSushi/ripgrep#installation)
 - [asdf](https://asdf-vm.com/#/core-manage-asdf-vm)
+- [grip](https://github.com/joeyespo/grip#installation)
 - [neovim](https://github.com/neovim/neovim/wiki/Installing-Neovim#macos--os-x)
 - [emacs](https://www.gnu.org/software/emacs/)
 - [doom emacs](https://github.com/hlissner/doom-emacs#install)
@@ -23,8 +24,9 @@ $ git clone https://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins
 $ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/powerlevel10k
 ```
 
-
 ## Setup
+
+Before continuing, ensure that you have all fonts _(we also need the `Powerlevel10k` font) and packages installed.
 
 ```sh
 $ git clone git@github.com:brenopanzolini/dotfiles.git "$HOME/.dotfiles"
