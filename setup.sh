@@ -11,7 +11,7 @@ ln -sf "$dotfiles_dir/git/.gitignore_global" ~/.gitignore_global
 
 ######## EMACS ########
 echo "Setup emacs"
-ln -sf "$dotfiles_dir/emacs/.doom.d/" ~/.doom.d
+ln -sf "$dotfiles_dir/emacs/.doom.d" ~/.doom.d
 ln -sf "$dotfiles_dir/emacs/.lsp" ~/.lsp
 
 ######### ZSH #########

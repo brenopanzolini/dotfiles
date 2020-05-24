@@ -3,7 +3,7 @@
 	email = bpanzolini@gmail.com
 
 [core]
-    excludesfile = ~/.gitignore_global
+	excludesfile = ~/.gitignore_global
 
 [commit]
   gpgsign = true

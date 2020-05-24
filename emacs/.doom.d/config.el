@@ -15,7 +15,7 @@
        doom-big-font-increment 2)
 
 ;; doom themes
-(setq  doom-theme 'doom-dracula
+(setq  doom-theme 'doom-monokai-pro
        doom-themes-treemacs-theme "Default")
 
 ;; display-line-numbers
