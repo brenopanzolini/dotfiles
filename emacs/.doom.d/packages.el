@@ -7,3 +7,4 @@
 (package! lsp-ui)
 (package! lsp-treemacs)
 (package! paredit)
+(package! sort-words)
