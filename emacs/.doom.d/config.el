@@ -3,6 +3,9 @@
 ;; to open emacs maximized
 (add-to-list 'initial-frame-alist '(fullscreen . maximized))
 
+;; increase history-length
+(setq history-length 300)
+
 ;; disable confirmation message on exit
 (setq confirm-kill-emacs nil)
 
@@ -56,7 +59,8 @@
 ;; clojure
 (add-to-list 'auto-mode-alist '("\\.repl\\'" . clojure-mode))
 
-(set-popup-rule! "^\\*cider-repl" :side 'right :width 0.5)
+(after! cider
+  (set-popup-rule! "^\\*cider-repl" :side 'right :size 0.5))
 
 (use-package! clojure-mode
   :config
@@ -74,6 +78,7 @@
         cljr-magic-require-namespaces
         '(("gen" . "common-test.generators")
           ("io" . "clojure.java.io")
+          ("m" . "matcher-combinators.matchers")
           ("pp" . "clojure.pprint")
           ("s" . "schema.core")
           ("set" . "clojure.set")
@@ -82,7 +87,7 @@
 ;; company
 (use-package! company
   :config
-  (setq company-minimum-prefix-length 3
+  (setq company-minimum-prefix-length 1
         company-idle-delay 0.15
         company-tooltip-align-annotations t
         company-show-numbers t))
