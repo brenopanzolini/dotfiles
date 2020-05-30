@@ -3,6 +3,7 @@
 
 (package! aggressive-indent)
 (package! clj-refactor)
+(package! emojify)
 (package! lsp-mode)
 (package! lsp-ui)
 (package! lsp-treemacs)

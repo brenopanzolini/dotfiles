@@ -3,6 +3,9 @@
 ;; to open emacs maximized
 (add-to-list 'initial-frame-alist '(fullscreen . maximized))
 
+;; add emoji support
+(add-hook! 'after-init-hook #'global-emojify-mode)
+
 ;; increase history-length
 (setq history-length 300)
 
@@ -84,6 +87,12 @@
           ("set" . "clojure.set")
           ("str" . "clojure.string"))))
 
+;; javascript
+(add-hook! js2-mode
+
+           ;; Change tab offset
+           (setq js2-basic-offset 2))
+
 ;; company
 (use-package! company
   :config
@@ -96,7 +105,8 @@
 (use-package! lsp-mode
   :commands lsp
   :hook ((clojure-mode . lsp)
-         (go-mode . lsp))
+         (go-mode . lsp)
+         (js2-mode . lsp))
   :init
   (setq lsp-log-io nil
         lsp-semantic-highlighting :immediate)
