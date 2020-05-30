@@ -9,6 +9,10 @@ echo "Setup git"
 ln -sf "$dotfiles_dir/git/.gitconfig" ~/.gitconfig
 ln -sf "$dotfiles_dir/git/.gitignore_global" ~/.gitignore_global
 
+######### NODE #########
+echo "Setup Node.js"
+cp "$dotfiles_dir/node/.npmrc" ~/.npmrc
+
 ######## EMACS ########
 echo "Setup emacs"
 ln -sf "$dotfiles_dir/emacs/.doom.d" ~/.doom.d

@@ -28,8 +28,12 @@ $ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:
 
 Before continuing, ensure that you have all fonts _(we also need the `Powerlevel10k` font)_ and packages installed.
 
+1. Setup
+
 ```sh
 $ git clone git@github.com:brenopanzolini/dotfiles.git "$HOME/.dotfiles"
 $ cd ~/.dotfiles
 $ ./setup.sh
 ```
+
+2. Manually update `~/.npmrc` with your correct personal GitHub access token
