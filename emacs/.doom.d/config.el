@@ -93,6 +93,11 @@
            ;; Change tab offset
            (setq js2-basic-offset 2))
 
+(add-hook! json-mode
+
+           ;; Change tab offset
+           (setq js-indent-level 2))
+
 ;; company
 (use-package! company
   :config
