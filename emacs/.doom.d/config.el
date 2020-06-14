@@ -63,7 +63,7 @@
 (add-to-list 'auto-mode-alist '("\\.repl\\'" . clojure-mode))
 
 (after! cider
-  (set-popup-rule! "^\\*cider-repl" :side 'right :size 0.5))
+  (set-popup-rule! "^\\*cider-repl" :side 'right :size 0.4))
 
 (use-package! clojure-mode
   :config
@@ -77,6 +77,7 @@
   :after clojure-mode
   :config
   (setq cljr-warn-on-eval nil
+        clojure-thread-all-but-last t
         cljr-clojure-test-declaration "[clojure.test :refer :all]"
         cljr-magic-require-namespaces
         '(("gen" . "common-test.generators")
