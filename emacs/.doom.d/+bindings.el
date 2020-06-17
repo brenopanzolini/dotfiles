@@ -19,7 +19,7 @@
    (:map clojure-mode-map
     (:n "R" #'hydra-cljr-help-menu/body)
     (:localleader
-     ("a" #'clojure-align)
+     "a" #'clojure-align
      (:prefix ("e" . "eval")
       "d" #'cider-read-and-eval-defun-at-point
       "f" #'cider-eval-defun-at-point
