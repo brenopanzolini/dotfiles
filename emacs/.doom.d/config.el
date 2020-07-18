@@ -22,7 +22,7 @@
 
 ;; doom themes
 (setq  doom-theme 'doom-monokai-pro
-       doom-themes-treemacs-theme "Default")
+       doom-themes-treemacs-theme "doom-colors")
 
 ;; display-line-numbers
 (setq display-line-numbers-type t)
@@ -34,7 +34,8 @@
 (setq +format-on-save-enabled-modes t)
 
 ;; projectile
-(setq projectile-project-search-path '("~/Projects/"))
+(setq projectile-project-search-path '("~/Projects/")
+      projectile-enable-caching nil)
 
 ;; dired
 (add-hook! dired-mode
@@ -114,8 +115,8 @@
          (go-mode . lsp)
          (js2-mode . lsp))
   :init
-  (setq lsp-log-io nil
-        lsp-semantic-highlighting :immediate)
+  (setq lsp-headerline-breadcrumb-enable t
+        lsp-signature-auto-activate nil)
   :config
   (dolist (m '(clojure-mode
                clojurec-mode
