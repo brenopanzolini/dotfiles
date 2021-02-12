@@ -8,3 +8,10 @@ alias f="fzf --preview 'head -100 {}' --bind 'enter:execute(nvim {})+abort'"
 alias dotfiles="$EDITOR $DOTFILES_DIR"
 alias edit="$EDITOR ~/.zshrc"
 alias reload="source ~/.zshrc"
+
+# Format
+alias eq="~/.opam/default/bin/eq"
+
+# Nubank
+alias grt="nu auth get-refresh-token"
+alias rt="nu auth refresh-token"

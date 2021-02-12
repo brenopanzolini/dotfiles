@@ -1,8 +1,8 @@
-{"macro-defs" {schema.core/defschema [:declaration :elements]
+{:macro-defs {schema.core/defschema [:declaration :elements]
                schema.core/def [:declaration :elements]
                schema.test/deftest [{:element :declaration :tags #{:unused}} :elements]
                postman.aux.init/defflow [{:element :declaration :tags #{:unused}} :elements]}
- "cljfmt" {:indents
+ :cljfmt {:indents
            {against-backgroud       [[:block 0]]
             against-background      [[:inner 0]]
             as-admin                [[:block 1]]
@@ -56,8 +56,11 @@
             with-fn-validation      [[:block 0]]
             with-responses          [[:block 0]]
             with-scopes             [[:block 1]]}}
- "source-paths" ["src" "test" "postman"]
- "show-docs-arity-on-same-line?" true
- "use-metadata-for-privacy?" true
- "keep-require-at-start?" true
- "dependency-scheme" "jar"}
+ :linters {:unused-namespace-declarations #{"postman"}}
+ :source-paths ["src" "test" "postman"]
+ :show-docs-arity-on-same-line? true
+ :use-metadata-for-privacy? true
+ :auto-add-ns-to-new-files? true
+ :keep-require-at-start? true
+ :semantic-tokens? true
+ :dependency-scheme "jar"}

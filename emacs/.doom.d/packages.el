@@ -2,11 +2,13 @@
 ;;; $DOOMDIR/packages.el
 
 (package! aggressive-indent :disable t)
+(package! cider)
 (package! clj-refactor)
-(package! emojify)
+;; (package! emojify)
 (package! lsp-mode)
 (package! lsp-ui)
 (package! lsp-treemacs)
 (package! paredit)
 (package! posframe)
 (package! sort-words)
+(package! treemacs-all-the-icons)
