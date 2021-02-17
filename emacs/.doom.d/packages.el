@@ -1,7 +1,7 @@
 ;; -*- no-byte-compile: t; -*-
 ;;; $DOOMDIR/packages.el
 
-(package! aggressive-indent :disable t)
+;; (package! aggressive-indent :disable t)
 (package! cider)
 (package! clj-refactor)
 ;; (package! emojify)

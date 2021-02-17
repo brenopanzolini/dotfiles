@@ -13,6 +13,7 @@ My dotfiles.
 - [neovim](https://github.com/neovim/neovim/wiki/Installing-Neovim#macos--os-x)
 - [emacs](https://www.gnu.org/software/emacs/)
 - [doom emacs](https://github.com/hlissner/doom-emacs#install)
+- [clojure-lsp](https://clojure-lsp.github.io/clojure-lsp/installation/)
 
 ## ZSH Plugins
 
@@ -27,12 +28,6 @@ $ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:
 ## Setup
 
 Before continuing, ensure that you have all fonts _(we also need the `Powerlevel10k` font)_ and packages installed.
-
-https://cmake.org/install/
-
-https://github.com/akermu/emacs-libvterm
-
-
 
 1. Setup
 
