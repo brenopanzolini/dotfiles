@@ -4,11 +4,6 @@ export EDITOR=nvim
 export DOTFILES_DIR="$HOME/.dotfiles"
 export GPG_TTY=$(tty)
 
-export LC_ALL=en_US.UTF-8
-export PINENTRY_USER_DATA="USE_CURSES=1"
-
-export PATH="/usr/local/opt/python@3.8/libexec/bin:$PATH" # For python3
-
 # ZSH
 ZSH_THEME="powerlevel10k/powerlevel10k"
 ZSH_DISABLE_COMPFIX=true
