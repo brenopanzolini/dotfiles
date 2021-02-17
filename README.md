@@ -13,6 +13,7 @@ My dotfiles.
 - [neovim](https://github.com/neovim/neovim/wiki/Installing-Neovim#macos--os-x)
 - [emacs](https://www.gnu.org/software/emacs/)
 - [doom emacs](https://github.com/hlissner/doom-emacs#install)
+- [clojure-lsp](https://clojure-lsp.github.io/clojure-lsp/installation/)
 
 ## ZSH Plugins
 

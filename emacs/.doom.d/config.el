@@ -1,10 +1,7 @@
 ;;; $DOOMDIR/config.el -*- lexical-binding: t; -*-
 
 ;; to open emacs maximized
-(add-to-list 'initial-frame-alist '(fullscreen . maximized))
-
-;; add emoji support
-(add-hook! 'after-init-hook #'global-emojify-mode)
+(add-to-list 'default-frame-alist '(fullscreen . maximized))
 
 ;; increase history-length
 (setq history-length 300)
@@ -12,17 +9,31 @@
 ;; disable confirmation message on exit
 (setq confirm-kill-emacs nil)
 
-;; evil
+;; disable visual paste
+(setq-default evil-kill-on-visual-paste nil)
+
+;; evil window
 (setq evil-split-window-below t
       evil-vsplit-window-right t)
 
+;; enable minibuffer to work correctly in evil mode
+(setq evil-collection-setup-minibuffer t)
+
+;; remove modeline help echo
+(setq mode-line-default-help-echo nil)
+
+;; frame title
+(setq frame-title-format (setq icon-title-format  ;; set window title with "project"
+                               '((:eval (projectile-project-name)))))
+
 ;; doom fonts
 (setq  doom-font (font-spec :family "Hack" :size 18)
-       doom-big-font-increment 2)
+       doom-big-font-increment 2
+       doom-unicode-font (font-spec :family "Noto Sans Mono"))
 
 ;; doom themes
 (setq  doom-theme 'doom-monokai-pro
-       doom-themes-treemacs-theme "doom-colors")
+       doom-themes-treemacs-theme "all-the-icons")
 
 ;; display-line-numbers
 (setq display-line-numbers-type t)
@@ -60,6 +71,10 @@
   (emacs-lisp-mode . paredit-mode)
   (lisp-mode . paredit-mode))
 
+;; treemacs all the icons
+(use-package! treemacs-all-the-icons
+  :after treemacs)
+
 ;; clojure
 (add-to-list 'auto-mode-alist '("\\.repl\\'" . clojure-mode))
 
@@ -68,8 +83,9 @@
 
 (use-package! clojure-mode
   :config
-  (setq cider-show-error-buffer 'only-in-repl
+  (setq cider-show-error-buffer t ;'only-in-repl
         clojure-indent-style 'always-align
+        clojure-thread-all-but-last t
         clojure-align-forms-automatically t
         clj-refactor-mode 1
         yas-minor-mode 1)) ; for adding require/use/import statements
@@ -78,16 +94,20 @@
   :after clojure-mode
   :config
   (setq cljr-warn-on-eval nil
+        cljr-eagerly-build-asts-on-startup nil
+        cljr-add-ns-to-blank-clj-files nil
         clojure-thread-all-but-last t
         cljr-clojure-test-declaration "[clojure.test :refer :all]"
         cljr-magic-require-namespaces
-        '(("gen" . "common-test.generators")
+        '(("d" . "datomic.api")
+          ("gen" . "common-test.generators")
           ("io" . "clojure.java.io")
           ("m" . "matcher-combinators.matchers")
           ("pp" . "clojure.pprint")
           ("s" . "schema.core")
           ("set" . "clojure.set")
-          ("str" . "clojure.string"))))
+          ("str" . "clojure.string")
+          ("th"  . "common-core.test-helpers"))))
 
 ;; javascript
 (add-hook! js2-mode
@@ -115,8 +135,14 @@
          (go-mode . lsp)
          (js2-mode . lsp))
   :init
-  (setq lsp-headerline-breadcrumb-enable t
-        lsp-signature-auto-activate nil)
+  (setq
+   lsp-headerline-breadcrumb-enable t
+   lsp-enable-file-watchers t
+   lsp-semantic-tokens-enable t
+   lsp-lens-enable t
+   lsp-completion-use-last-result nil
+   lsp-auto-execute-action nil
+   lsp-signature-auto-activate nil)
   :config
   (dolist (m '(clojure-mode
                clojurec-mode
@@ -130,7 +156,8 @@
   :commands lsp-ui-mode
   :config
   (setq lsp-ui-peek-list-width 60
-        lsp-ui-peek-fontify 'always))
+        lsp-ui-peek-fontify 'always
+        lsp-ui-sideline-show-code-actions nil))
 
 (use-package! lsp-treemacs
   :after lsp-mode
@@ -141,6 +168,10 @@
 (use-package! grip-mode
   :config
   (setq grip-update-after-change nil))
+
+;; sort-words
+(use-package! sort-words
+  :defer t)
 
 ;; load custom bindings
 (load! "+bindings")
