@@ -58,11 +58,11 @@
            (setq auto-revert-verbose nil))
 
 ;; aggressive indent
-(use-package! aggressive-indent
-  :hook
-  (clojure-mode . aggressive-indent-mode)
-  (emacs-lisp-mode . aggressive-indent-mode)
-  (lisp-mode . aggressive-indent-mode))
+;; (use-package! aggressive-indent
+;;   :hook
+;;   (clojure-mode . aggressive-indent-mode)
+;;   (emacs-lisp-mode . aggressive-indent-mode)
+;;   (lisp-mode . aggressive-indent-mode))
 
 ;; paredit
 (use-package! paredit
@@ -163,6 +163,12 @@
   :after lsp-mode
   :config
   (lsp-treemacs-sync-mode 1))
+
+;; magit todos
+(use-package! magit-todos
+  :after magit
+  :config
+  (magit-todos-mode t))
 
 ;; grip
 (use-package! grip-mode
