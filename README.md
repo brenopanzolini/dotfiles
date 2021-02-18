@@ -11,6 +11,7 @@ My dotfiles.
 - [asdf](https://asdf-vm.com/#/core-manage-asdf-vm)
 - [grip](https://github.com/joeyespo/grip#installation)
 - [neovim](https://github.com/neovim/neovim/wiki/Installing-Neovim#macos--os-x)
+- [todo.txt](https://github.com/todotxt/todo.txt-cli)
 - [emacs](https://www.gnu.org/software/emacs/)
 - [doom emacs](https://github.com/hlissner/doom-emacs#install)
 - [clojure-lsp](https://clojure-lsp.github.io/clojure-lsp/installation/)
