@@ -100,7 +100,6 @@
         cljr-clojure-test-declaration "[clojure.test :refer :all]"
         cljr-magic-require-namespaces
         '(("d" . "datomic.api")
-          ("gen" . "common-test.generators")
           ("io" . "clojure.java.io")
           ("m" . "matcher-combinators.matchers")
           ("pp" . "clojure.pprint")
@@ -136,7 +135,7 @@
          (js2-mode . lsp))
   :init
   (setq
-   lsp-headerline-breadcrumb-enable t
+   lsp-headerline-breadcrumb-enable nil
    lsp-enable-file-watchers t
    lsp-semantic-tokens-enable t
    lsp-lens-enable t
