@@ -103,7 +103,6 @@
           ("io" . "clojure.java.io")
           ("m" . "matcher-combinators.matchers")
           ("pp" . "clojure.pprint")
-          ("s" . "schema.core")
           ("set" . "clojure.set")
           ("str" . "clojure.string")
           ("th"  . "common-core.test-helpers"))))
@@ -122,10 +121,8 @@
 ;; company
 (use-package! company
   :config
-  (setq company-minimum-prefix-length 1
-        company-idle-delay 0.15
-        company-tooltip-align-annotations t
-        company-show-numbers t))
+  (setq company-tooltip-align-annotations t
+        company-selection-wrap-around t))
 
 ;; lsp
 (use-package! lsp-mode
@@ -137,7 +134,10 @@
   (setq
    lsp-headerline-breadcrumb-enable nil
    lsp-enable-file-watchers t
+   lsp-signature-render-documentation nil
+   lsp-signature-function 'lsp-signature-posframe
    lsp-semantic-tokens-enable t
+   lsp-completion-sort-initial-results nil
    lsp-lens-enable t
    lsp-completion-use-last-result nil
    lsp-auto-execute-action nil

@@ -22,8 +22,7 @@
        (company)           ; the ultimate code completion backend
        ;;helm              ; the *other* search engine for love and life
        ;;ido               ; the other *other* search engine...
-       (ivy             ; a search engine for love and life
-        +icons)
+       (ivy)               ; a search engine for love and life
 
        :ui
        ;;deft              ; notational velocity for Emacs
@@ -35,8 +34,7 @@
        ;;hydra
        ;;indent-guides     ; highlighted indent columns
        ;;minimap           ; show a map of the code on the side
-       (modeline         ; snazzy, Atom-inspired modeline, plus API
-        +light)
+       (modeline)         ; snazzy, Atom-inspired modeline, plus API
        nav-flash         ; blink cursor line after big motions
        ;;neotree           ; a project drawer, like NERDTree for vim
        ophints           ; highlight the region an operation acts on
@@ -46,7 +44,7 @@
        ;;pretty-code       ; ligatures or substitute text with pretty symbols
        ;;tabs              ; an tab bar for Emacs
        treemacs          ; a project drawer, like neotree but cooler
-       ;;unicode           ; extended unicode support for various languages
+       unicode           ; extended unicode support for various languages
        vc-gutter         ; vcs diff in the fringe
        vi-tilde-fringe   ; fringe tildes to mark beyond EOB
        window-select     ; visually switch windows
@@ -71,6 +69,7 @@
 
        :emacs
        (dired           ; making dired pretty [functional]
+        +ranger
         +icons)
        electric          ; smarter, keyword-based electric-indent
        ;;ibuffer         ; interactive buffer management
@@ -103,7 +102,8 @@
        lookup              ; navigate your code and its documentation
        lsp
        ;;macos             ; MacOS-specific commands
-       magit             ; a git porcelain for Emacs
+       (magit            ; a git porcelain for Emacs
+        +forge)
        ;;make              ; run make tasks from Emacs
        ;;pass              ; password manager for nerds
        ;;pdf               ; pdf enhancements

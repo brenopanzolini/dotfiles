@@ -61,6 +61,6 @@
  :show-docs-arity-on-same-line? true
  :use-metadata-for-privacy? true
  :auto-add-ns-to-new-files? true
- :keep-require-at-start? true
+ :keep-require-at-start? false
  :semantic-tokens? true
  :dependency-scheme "jar"}
