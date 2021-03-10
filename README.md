@@ -15,6 +15,7 @@ My dotfiles.
 - [emacs](https://www.gnu.org/software/emacs/)
 - [doom emacs](https://github.com/hlissner/doom-emacs#install)
 - [clojure-lsp](https://clojure-lsp.github.io/clojure-lsp/installation/)
+- [clj-kondo](https://github.com/clj-kondo/clj-kondo/blob/master/doc/install.md)
 
 ## ZSH Plugins
 
