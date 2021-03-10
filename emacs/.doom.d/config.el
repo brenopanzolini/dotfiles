@@ -103,6 +103,7 @@
           ("io" . "clojure.java.io")
           ("m" . "matcher-combinators.matchers")
           ("pp" . "clojure.pprint")
+          ("s" . "schema.core")
           ("set" . "clojure.set")
           ("str" . "clojure.string")
           ("th"  . "common-core.test-helpers"))))
@@ -132,6 +133,7 @@
          (js2-mode . lsp))
   :init
   (setq
+   lsp-clojure-custom-server-command '("bash" "-c" "clojure-lsp")
    lsp-headerline-breadcrumb-enable nil
    lsp-enable-file-watchers t
    lsp-signature-render-documentation nil
