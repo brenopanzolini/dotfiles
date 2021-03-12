@@ -2,10 +2,10 @@
 ;;; $DOOMDIR/packages.el
 
 ;; (package! aggressive-indent :disable t)
+(package! browse-kill-ring)
 (package! cider)
 (package! clj-refactor)
 ;; (package! emojify)
-(package! flycheck-clojure)
 (package! lsp-mode)
 (package! lsp-ui)
 (package! lsp-treemacs)

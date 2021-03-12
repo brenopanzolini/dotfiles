@@ -3,7 +3,8 @@
 ;; general mappings
 (map!
  :n "-" #'dired-jump
- :nvi "<f10>" #'doom/window-maximize-buffer)
+ :nvi "<f10>" #'doom/window-maximize-buffer
+ :nvi "s-y" #'browse-kill-ring)
 
 ;; paredit
 (after! paredit
