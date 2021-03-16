@@ -6,6 +6,7 @@
 (package! cider)
 (package! clj-refactor)
 ;; (package! emojify)
+(package! graphql-mode)
 (package! lsp-mode)
 (package! lsp-ui)
 (package! lsp-treemacs)
