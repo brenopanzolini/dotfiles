@@ -4,7 +4,9 @@
 (map!
  :n "-" #'dired-jump
  :nvi "<f10>" #'doom/window-maximize-buffer
- :nvi "s-y" #'browse-kill-ring)
+ :nvi "s-y" #'browse-kill-ring
+ :nvi "s-<up>" #'drag-stuff-up
+ :nvi "s-<down>" #'drag-stuff-down)
 
 ;; paredit
 (after! paredit

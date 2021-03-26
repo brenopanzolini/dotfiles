@@ -5,6 +5,7 @@
 (package! browse-kill-ring)
 (package! cider)
 (package! clj-refactor)
+(package! drag-stuff)
 ;; (package! emojify)
 (package! graphql-mode)
 (package! lsp-mode)
