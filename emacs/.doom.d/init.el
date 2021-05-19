@@ -57,8 +57,7 @@
         +everywhere)
        file-templates    ; auto-snippets for empty files
        fold              ; (nigh) universal code folding
-       (format         ; automated prettiness
-        +onsave)
+       format         ; automated prettiness
        ;;god               ; run Emacs commands without modifier keys
        ;;lispy             ; vim for lisp, for people who don't like vim
        multiple-cursors  ; editing in many places at once
