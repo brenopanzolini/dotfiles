@@ -141,6 +141,7 @@
    lsp-semantic-tokens-enable t
    lsp-completion-sort-initial-results nil
    lsp-lens-enable t
+   lsp-lens-place-position 'end-of-line
    lsp-completion-use-last-result nil
    lsp-auto-execute-action nil
    lsp-signature-auto-activate nil)
