@@ -79,7 +79,8 @@
 (add-to-list 'auto-mode-alist '("\\.repl\\'" . clojure-mode))
 
 (after! cider
-  (set-popup-rule! "^\\*cider-repl" :side 'right :size 0.4))
+  (set-popup-rule! "^\\*cider-repl" :side 'right :size 0.4)
+  (setq cider-lein-parameters "repl :headless :host 127.0.0.1"))
 
 (use-package! clojure-mode
   :config
@@ -110,12 +111,10 @@
 
 ;; javascript
 (add-hook! js2-mode
-
            ;; Change tab offset
            (setq js2-basic-offset 2))
 
 (add-hook! json-mode
-
            ;; Change tab offset
            (setq js-indent-level 2))
 
@@ -136,13 +135,14 @@
    lsp-clojure-custom-server-command '("bash" "-c" "clojure-lsp")
    lsp-headerline-breadcrumb-enable nil
    lsp-headerline-breadcrumb-enable-diagnostics nil
-   lsp-enable-file-watchers t
+   lsp-lens-enable nil
+   lsp-lens-place-position 'end-of-line
+   lsp-enable-file-watchers nil
+   lsp-file-watch-threshold nil
    lsp-signature-render-documentation nil
    lsp-signature-function 'lsp-signature-posframe
    lsp-semantic-tokens-enable t
    lsp-completion-sort-initial-results nil
-   lsp-lens-enable nil
-   lsp-lens-place-position 'end-of-line
    lsp-idle-delay 0.3
    lsp-completion-use-last-result nil
    lsp-auto-execute-action nil
