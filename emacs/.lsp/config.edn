@@ -56,11 +56,10 @@
             with-fn-validation      [[:block 0]]
             with-responses          [[:block 0]]
             with-scopes             [[:block 1]]}}
- :linters {:unused-namespace-declarations #{"postman"}}
- :source-paths ["src" "test" "postman"]
+ :linters {:unused-public-var {:exclude-when-defined-by #{state-flow.cljtest/defflow}}}
  :show-docs-arity-on-same-line? true
  :use-metadata-for-privacy? true
  :auto-add-ns-to-new-files? true
- :keep-require-at-start? false
+ :clean {:ns-inner-blocks-indentation :same-line}
  :semantic-tokens? true
  :dependency-scheme "jar"}
