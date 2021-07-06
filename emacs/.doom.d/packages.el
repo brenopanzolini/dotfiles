@@ -6,6 +6,7 @@
 (package! cider)
 (package! clj-refactor)
 (package! drag-stuff)
+(package! dumb-jump)
 ;; (package! emojify)
 (package! graphql-mode)
 (package! lsp-mode)
